@@ -23,7 +23,11 @@ This command will automatically install and configure Pterodactyl wings, you nee
 
 ## Login details
 Once you have installed the panel, you can login using these details:
+
 `admin@admin.com` / `admin`
+
 `admin`
+
 Database password is also `admin`.
+
 Make sure to change these details manually.
