@@ -166,6 +166,13 @@ EOF
 fi
 
 if [ "$type" == "node" ] || [ "$type" == "full" ]; then
+  printf "${GREEN_TEXT}[*]${NC} Opening ports..."
+  iptables --flush
+  printf " ${GREEN} DONE ${NC}\n"
+  printf "${GREEN_TEXT}[*]${NC} Installing updates..."
+  apt -qq update 1>/dev/null 2>/dev/null
+  apt -qq -y upgrade 1>/dev/null 2>/dev/null
+  printf " ${GREEN} DONE ${NC}\n"
   printf "${GREEN_TEXT}[*]${NC} Installing docker..."
   curl -sSL https://get.docker.com/ | CHANNEL=stable bash 1>/dev/null 2>/dev/null
   printf " ${GREEN} DONE ${NC}\n"
